@@ -18,24 +18,33 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Pickups = GameObject.FindGameObjectsWithTag("PickUp");
-        PickupDistances = new float[Pickups.Length];
-        smallestPickupDistance = 100000;
+        // Pickups = GameObject.FindGameObjectsWithTag("PickUp");
+        // PickupDistances = new float[Pickups.Length];
     }
 
     // Update is called once per frame
     void Update()
     {
+        smallestPickupDistance = Mathf.Infinity;
         i = 0;
+
+        Pickups = GameObject.FindGameObjectsWithTag("PickUp");
+        PickupDistances = new float[Pickups.Length];
+
         foreach(GameObject Pickup in Pickups)
         {
-            currentPickupDistance = Vector3.Distance(Player.transform.position, Pickup.transform.position);
+            currentPickupDistance = Vector3.Distance(
+                Player.transform.position, 
+                Pickup.transform.position
+            );
+
             PickupDistances[i] = currentPickupDistance;
 
             if (currentPickupDistance < smallestPickupDistance)
             {
                 smallestPickupDistance = currentPickupDistance;
             }
+
             i++;
         }
 

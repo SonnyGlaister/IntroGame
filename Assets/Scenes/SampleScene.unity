@@ -1454,7 +1454,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 983601686}
-  closestPickupDistanceText: {fileID: 0}
+  closestPickupDistanceText: {fileID: 777707066}
 --- !u!1 &1290753904
 GameObject:
   m_ObjectHideFlags: 0
